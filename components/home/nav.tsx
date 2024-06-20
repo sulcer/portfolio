@@ -15,7 +15,7 @@ const Nav = () => {
   };
 
   return (
-    <nav className="flex flex-row justify-between items-center font-medium p-4">
+    <nav className="flex flex-row justify-between items-center font-medium p-4 overflow-hidden">
       <Link href="" className="flex items-center gap-x-3 cursor-pointer">
         <Image
           src={logoDark}
