@@ -4,6 +4,8 @@ import React from 'react';
 import { cn } from '@/lib/utils';
 import { Inter as FontSans } from 'next/font/google';
 import { ThemeProvider } from '@/components/providers/theme-provider';
+import MetasHead from '@/components/home/metas-head';
+import GoogleAnalytics from '@/components/home/google-analytics';
 
 const fontSans = FontSans({
   subsets: ['latin'],
@@ -13,6 +15,9 @@ const fontSans = FontSans({
 export const metadata: Metadata = {
   title: 'Gregor Sulcer',
   description: 'Gregor Sulcer - Fullstack Developer - Portfolio',
+  verification: {
+    google: '-p3wr7lI--mRwBhmmJ3lIxEOf4YxeYr2lLs3Clqnl_4',
+  },
 };
 
 export default function RootLayout({
@@ -22,6 +27,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <MetasHead />
+      <GoogleAnalytics
+        GA_MEASUREMENT_ID={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS as string}
+      />
       <body
         className={cn(
           'min-h-screen bg-background font-sans antialiased',
