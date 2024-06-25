@@ -37,6 +37,10 @@ const MetasHead = () => {
           property="og:description"
         />
         <link rel="icon" href="/favicon.ico" />
+        <meta
+          name="google-site-verification"
+          content="-p3wr7lI--mRwBhmmJ3lIxEOf4YxeYr2lLs3Clqnl_4"
+        />
       </Head>
     </>
   );
