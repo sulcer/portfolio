@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils';
 import { Inter as FontSans } from 'next/font/google';
 import { ThemeProvider } from '@/components/providers/theme-provider';
 import MetasHead from '@/components/home/metas-head';
-import GoogleAnalytics from '@/components/home/google-analytics';
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 const fontSans = FontSans({
   subsets: ['latin'],
@@ -29,7 +29,7 @@ export default function RootLayout({
     <html lang="en">
       <MetasHead />
       <GoogleAnalytics
-        GA_MEASUREMENT_ID={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS as string}
+        gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS as string}
       />
       <body
         className={cn(
